@@ -20,6 +20,7 @@ function getRandomLetter(max) {
 }
 
 startButton.addEventListener("click", () => {
+    gameContainer.innerHTML = ""
     for(let i = 0; i < cardArray.length; i++) {
         const idx = getRandomLetter(25);
         let currendCard = cardArray[i]
@@ -28,6 +29,7 @@ startButton.addEventListener("click", () => {
 });
 
 resetButton.addEventListener("click", () => {
+    gameContainer.innerHTML = ""
     for(let i = 0; i < cardArray.length; i++) {
         let currendCard = cardArray[i]
         currendCard.innerHTML = ""
