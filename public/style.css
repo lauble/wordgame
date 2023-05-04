@@ -15,10 +15,11 @@ body {
     padding: 10px;
     display: flex;
     flex-direction: column;
+    background-color: lightgray;
 }
 
 #nav {
-    width: 50%;
+    width: 50vw;
     align-self: center;
 }
 
@@ -44,4 +45,5 @@ body {
     height: 100%;
     border: 1px solid gray;
     border-radius: 10px;
+    background-color: gray;
 }
