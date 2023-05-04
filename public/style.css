@@ -1,0 +1,21 @@
+body {
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+#app {
+    margin: auto;
+    width: 80vw;
+    height: 50vh;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+}
