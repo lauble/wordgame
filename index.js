@@ -48,11 +48,6 @@ async function getRandomWord() {
 
 startButton.addEventListener("click", () => {
     gameContainer.innerHTML = ""
-    // const startImage = document.createElement("img");
-    // startImage.src = "/public/images/milk.png";
-    // startImage.className = "game-img";
-    // gameContainer.appendChild(startImage);
-
     getRandomWord();
 
     for(let i = 0; i < cardArray.length; i++) {
