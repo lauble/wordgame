@@ -11,6 +11,8 @@ const startButton = document.getElementById("startbtn");
 const resetButton = document.getElementById("resetbtn");
 const quitButton = document.getElementById("quitbtn");
 
+let gameContainer = document.getElementById("game");
+
 let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 function getRandomLetter(max) {
@@ -30,7 +32,11 @@ resetButton.addEventListener("click", () => {
         let currendCard = cardArray[i]
         currendCard.innerHTML = ""
     }
+});
 
-})
+quitButton.addEventListener("click", () => {
+    gameContainer.innerHTML = "Thanks for playing.";
+    gameContainer.style.color = "red";
+});
 
 
