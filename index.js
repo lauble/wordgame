@@ -1,3 +1,4 @@
+// letter cards
 let card1 = document.getElementById('card1').id;
 let card2 = document.getElementById('card2').id;
 let card3 = document.getElementById('card3').id;
@@ -5,6 +6,12 @@ let card4 = document.getElementById('card4').id;
 let card5 = document.getElementById('card5').id;
 let card6 = document.getElementById('card6').id;
 
+// word cards
+let word1 = document.getElementById('word1');
+let word2 = document.getElementById('word2');
+let word3 = document.getElementById('word3');
+
+// word length buttons
 const length3 = document.getElementById('length3');
 const length4 = document.getElementById('length4');
 const length5 = document.getElementById('length5');
@@ -14,13 +21,15 @@ const length8 = document.getElementById('length8');
 const length9 = document.getElementById('length9');
 
 const guessArray = [card1, card2, card3, card4, card5, card6];
+let wordGuessArray = [1, 2, 3];
 
-// input event listener
-let input = document.querySelector('input');
-let guessCount = 0;
-input.addEventListener('input', (event) => {
-  guessCount++;
-  if (guessCount === 6) {
+// input event listeners
+let letterGuess = document.getElementById('letter-guess');
+let letterGuessCount = 0;
+
+letterGuess.addEventListener('input', (event) => {
+  letterGuessCount++;
+  if (letterGuessCount === 6) {
     gameContainer.innerHTML = 'Sorry, game over.';
   }
   for (let i = 0; i < guessArray.length; i++) {
@@ -31,6 +40,13 @@ input.addEventListener('input', (event) => {
   }
 });
 
+let wordGuess = document.getElementById('word-guess');
+
+wordGuess.addEventListener('input', (event) => {
+  console.log(event.target.value);
+});
+
+// length button event listener
 const lengthArray = [
   length3,
   length4,
@@ -48,6 +64,7 @@ lengthArray.forEach((length) => {
   });
 });
 
+// game buttons
 const startButton = document.getElementById('startbtn');
 const resetButton = document.getElementById('resetbtn');
 const quitButton = document.getElementById('quitbtn');
@@ -73,8 +90,8 @@ startButton.addEventListener('click', () => {
 
 resetButton.addEventListener('click', () => {
   gameContainer.innerHTML = '';
-  for (let i = 0; i < cardArray.length; i++) {
-    let currendCard = cardArray[i];
+  for (let i = 0; i < guessArray.length; i++) {
+    let currendCard = guessArray[i];
     currendCard.innerHTML = '';
   }
 });

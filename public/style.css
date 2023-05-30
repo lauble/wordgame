@@ -23,7 +23,7 @@ body {
     align-self: center;
 }
 
-.card-container {
+.card-container, .word-container {
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
