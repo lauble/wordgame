@@ -28,6 +28,7 @@ let letterGuess = document.getElementById('letter-guess');
 let letterGuessCount = 0;
 
 letterGuess.addEventListener('input', (event) => {
+  console.log(event.target.value)
   letterGuessCount++;
   if (letterGuessCount === 6) {
     gameContainer.innerHTML = 'Sorry, game over.';
@@ -83,7 +84,10 @@ async function getRandomWord() {
 }
 
 // button event listeners
+let start = false;
+
 startButton.addEventListener('click', () => {
+  start = true;
   gameContainer.innerHTML = '';
   getRandomWord();
 });
@@ -97,6 +101,7 @@ resetButton.addEventListener('click', () => {
 });
 
 quitButton.addEventListener('click', () => {
+  start = false;
   gameContainer.innerHTML = 'Thanks for playing.';
   gameContainer.style.color = 'red';
 });
