@@ -28,7 +28,7 @@ let letterGuess = document.getElementById('letter-guess');
 let letterGuessCount = 0;
 
 letterGuess.addEventListener('input', (event) => {
-  console.log(event.target.value)
+  console.log(event.target.value);
   letterGuessCount++;
   if (letterGuessCount === 6) {
     gameContainer.innerHTML = 'Sorry, game over.';
@@ -44,7 +44,11 @@ letterGuess.addEventListener('input', (event) => {
 let wordGuess = document.getElementById('word-guess');
 
 wordGuess.addEventListener('input', (event) => {
-  console.log(event.target.value);
+  let guess = event.target.value;
+  console.log(guess);
+  if (guess === word) {
+    gameContainer.innerHTML = `Great job! You guessed '${word}'.`;
+  }
 });
 
 // length button event listener
@@ -80,7 +84,7 @@ async function getRandomWord() {
   );
   const data = await response.json();
   word = data[0];
-  gameContainer.innerHTML = word;
+  console.log(word);
 }
 
 // button event listeners
