@@ -48,6 +48,8 @@ wordGuess.addEventListener('input', (event) => {
   console.log(guess);
   if (guess === word) {
     gameContainer.innerHTML = `Great job! You guessed '${word}'.`;
+  } else {
+    console.log(guess);
   }
 });
 
@@ -61,7 +63,7 @@ const lengthArray = [
   length8,
   length9,
 ];
-let wordLength = 6;
+let wordLength = 0;
 
 lengthArray.forEach((length) => {
   length.addEventListener('click', () => {
